@@ -1,26 +1,3 @@
-# Step 1 : Environment Creation
-
-## Objective:
-- Since the developer are working in different projects, each project would require its own dependencies (like libraries, packages,frameworks etc..). If I compile all together in one environment the storage efficiency becomes low and each project dependencies might contradict with each other. So, we need distinct environment for each project.
-
-## How to create environment using uv
-- Ensure that you initalized your gitHub repo.
-- ```uv init``` : This initalizes the uv package manager
-- ```uv venv``` : for creating virtual environment.
-- Ensure to activate your environment.
-- ```uv add <your package name>```: for adding dependencies
-- ```uv rm <your package name>``` : for removing package 
-- ```uv sync``` : for syncing the dependencies
-
-# Step 2 : Creating structure for the project.
-- This can be easily done using *"cookieCutter"*
-- But instead to practise them we create something called __"template.py"__
-
-## Objective :
-- To create a project structure template that standard and used across industries. Re-use them when required.
-
-## How to create template.py
-```python
 
 import os 
 from pathlib import Path
@@ -50,7 +27,8 @@ list_of_files = [
     "Dockerfile",
     "setup.py",
     "research/research.ipynb",   # for storing all the plugs and plays here
-    "template/index.html"
+    "template/index.html",
+    "app.py"
 ]
 
 for filePath in list_of_files:
@@ -61,14 +39,10 @@ for filePath in list_of_files:
         os.makedirs(fileDir,exist_ok=True)
         logging.info(f"Creating directories : {fileDir} for the file : {fileName}")
     
-    if (not.os.path.exists(filePath)) or (os.path.getsize(filepath)==0):
+    if (not os.path.exists(filePath)) or (os.path.getsize(filePath)==0):
         with open(filePath, "w") as f:
             pass 
             logging.info(f"Creating empty files : {filePath}")
     
     else:
         logging.info(f"{fileName} is already existing.")
-
-
-
-```
