@@ -71,4 +71,17 @@ for filePath in list_of_files:
 ```
 
 
-# Step 3 : Creating structure for the project.
+# Step 3 : Set up logging within the SRC folder's __init__.py file
+
+```python
+import os 
+import sys
+import logging
+
+
+# structure of the configuratoin
+logging_str =  "[%(asctime)s:%(levelname)s:%(module)s:%(message)s]"
+
+logging.basicConfig
+
+```
