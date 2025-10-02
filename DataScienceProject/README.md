@@ -68,7 +68,7 @@ for filePath in list_of_files:
     
     else:
         logging.info(f"{fileName} is already existing.")
-
-
-
 ```
+
+
+# Step 2 : Creating structure for the project.
