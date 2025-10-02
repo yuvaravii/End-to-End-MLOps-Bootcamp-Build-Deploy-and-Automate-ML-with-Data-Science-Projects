@@ -71,4 +71,4 @@ for filePath in list_of_files:
 ```
 
 
-# Step 2 : Creating structure for the project.
+# Step 3 : Creating structure for the project.
