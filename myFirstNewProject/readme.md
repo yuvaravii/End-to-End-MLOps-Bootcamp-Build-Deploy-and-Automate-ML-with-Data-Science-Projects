@@ -68,6 +68,10 @@ The above command will run the template script and set up the project structure 
 
 ## Handling yaml file
 - it is essential to use **BoxConfigError** while handling Yaml file, as they are handled more efficiently.
+    - ```Use dicts for data. Use ConfigBox for configuration.```
+    - ConfigBox is unidirection, you can load it but does not get manipulated thus ConfigBox output are immutable.
+    - can find the code and example in ```research.ipynb```
+
 - Use **ensure_annotation** decorator while using YAML file.
 
 
