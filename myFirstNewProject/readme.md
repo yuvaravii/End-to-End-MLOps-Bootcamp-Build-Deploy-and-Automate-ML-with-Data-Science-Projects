@@ -59,6 +59,9 @@ The above command will run the template script and set up the project structure 
 - Common functions are used across different modules within the src folder, similar to the log function.
 - These are stored in `src/my_first_end_to_end_project/utils/common_utils.py`.
 
+## Handling yaml file
+- it is essential to use **BoxConfigError** while handling Yaml file, as they are handled more efficiently.
+- Use **ensure_annotation** decorator while using YAML file.
 
 
 
