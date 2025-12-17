@@ -31,6 +31,13 @@ clear                           # to clear all the above information in bash
 
 - I preferred `uv` because it is written in Rust, making executions faster than conda and Python's venv.
 
+## In any case if you are github codespace then selection of kernel while executing ```.ipynb``` file becomes complex.
+Use the following commands in bash in github codespace
+1. ```uv add ipykernel```
+2. Else : ```uv pip install ipykernel```
+3. ```python -m ipykernel install --user --name=.venv --display-name "Python (.venv)"```
+4. restart the application once done.
+
 # Step 2: Create project template
 - We can use a package called Cookiecutter to create templates for our project.
 - Since this is our first project, we can create a custom template script.
