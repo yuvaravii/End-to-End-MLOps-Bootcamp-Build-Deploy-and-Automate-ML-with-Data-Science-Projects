@@ -1,7 +1,16 @@
+# My First End-to-End Project
+
+This is a template for building an end-to-end machine learning project with MLOps practices. It includes logging, configuration, and a modular structure for scalability.
+
+## Prerequisites
+- Python 3.11
+- `uv` package manager (install via `pip install uv` or from [uv's website](https://github.com/astral-sh/uv))
+
 # Step 1: Creating environment and activating it
-- environment is created using the uv package manager
-- python version used is 3.11
-- cmd  used 
+- Environment is created using the `uv` package manager.
+- Python version used is 3.11.
+- Commands used:
+
 ```cmd
 uv init --python 3.11
 uv venv
@@ -15,33 +24,42 @@ source ./.venv/bin/activate    # if bash
 clear                           # to clear all the above information in bash
 ```
 
-- The environment can be created in multiple ways
-1. using conda
-2. using uv
-3. using python 
+- The environment can be created in multiple ways:
+  1. Using conda
+  2. Using uv
+  3. Using Python's built-in venv
 
-- I preferred uv because they are written in rust, thus the executions are faster than the conda and python- 
+- I preferred `uv` because it is written in Rust, making executions faster than conda and Python's venv.
 
+# Step 2: Create project template
+- We can use a package called Cookiecutter to create templates for our project.
+- Since this is our first project, we can create a custom template script.
 
-# Step 2: Create templates.py
-- we can use package called cookiecutter to create templates for our project
-- Since it is first, we can create a template for our project
-
-```cmd
-uv run setup.py
+```bash
+uv run python template.py
 ```
-The above code will run and setting the project up.
 
-# Step 3: logging of the setup
-- We are logging each movement happening in the project, thus logger is necessary.
-- Why logging is essential?
-    - Logging is esesential, as they are easy to debug and understand the flow of execution. Also, we can include the fallback mechanism where the system fails frequently.
+The above command will run the template script and set up the project structure by creating necessary directories and files.
+
+# Step 3: Logging system setup
+- We log every action happening in the project, so a logger is necessary.
+- Why is logging essential?
+  - Logging is essential as it makes debugging and understanding the flow of execution easier. It also allows for fallback mechanisms when the system fails frequently.
 - How to log them?
-    - They can be logged using logger.info(), however they are multiple exceptions and errors that can be handled efficiently and catched easily.
-- In this project the entire logging is preferred to be in logger file present in 
-```/workspaces/End-to-End-MLOps-Bootcamp-Build-Deploy-and-Automate-ML-with-Data-Science-Projects/myFirstNewProject/src/my_first_end_to_end_project/logger```
-    - The logger function is written within the logger folder only, thus can be imported as __init__ file is available within it.
-    - Created a basic logging function in ```logger/__init__.py```
+  - Logs can be created using `logger.info()`, and there are multiple exceptions and errors that can be handled efficiently and caught easily.
+- In this project, the entire logging is handled in the logger file located at:
+  ```
+  src/my_first_end_to_end_project/logger
+  ```
+  - The logger function is written within the logger folder, and can be imported since an `__init__.py` file is available.
+  - A basic logging function is created in `logger/__init__.py`.
+  - Logs are stored in the "my_execution_logs" directory as "logged_summary.log".
+
+# Step 4: Common functionality setup
+- Common functions are used across different modules within the src folder, similar to the log function.
+- These are stored in `src/my_first_end_to_end_project/utils/common_utils.py`.
+
+
 
 
 
