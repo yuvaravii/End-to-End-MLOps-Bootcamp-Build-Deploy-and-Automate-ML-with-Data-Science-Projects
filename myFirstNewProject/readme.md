@@ -73,6 +73,18 @@ The above command will run the template script and set up the project structure 
     - can find the code and example in ```research.ipynb```
 
 - Use **ensure_annotation** decorator while using YAML file.
+  - This ensure_annotations helps to pass the arguments as mentioned in argument only.
+    ```
+    def get_product(x:int, y:int)-> int:
+      return x*y   
+    output = get_product(5,"3")
+    print(output)  # output : "33333"
+
+    # To overcome the above situation, we use ensure_annotations
+    from ensure import ensure_annotations
+    
+
+    ```
 
 
 

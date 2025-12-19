@@ -1,7 +1,0 @@
-[project]
-name = "end-to-end-mlops-bootcamp-build-deploy-and-automate-ml-with-data-science-projects"
-version = "0.1.0"
-description = "Add your description here"
-readme = "README.md"
-requires-python = ">=3.11"
-dependencies = []
