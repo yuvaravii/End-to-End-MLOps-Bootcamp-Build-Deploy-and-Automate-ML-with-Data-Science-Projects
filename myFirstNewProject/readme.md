@@ -82,9 +82,44 @@ The above command will run the template script and set up the project structure 
 
     # To overcome the above situation, we use ensure_annotations
     from ensure import ensure_annotations
-    
+    def get_product(x:int, y:int)-> int:
+      return x*y
 
+      # Now this will throw error
     ```
+
+  ## Now building common functions that could be used all over the project
+  1. read_yaml
+  2. create_directories
+  3. save_json
+  4. load_json
+  5. save_bin (save model)
+  6. load_bin (load model)
+- as from the above functions we can note that these functions are used across different files and common.
+
+# Step-5: Creation of ML pipelines
+## Workflow creation steps
+1. update config.yaml
+  - This file details about the data source management
+  - Data source could be API, Datawarehouse , data lake etc.
+2. update schema.yaml
+  - Once the data is loaded, this yaml file ensures the data types and its validation --> input data schema
+3. update params.yaml 
+  - Specifically used when the parameters are updated.
+4. update the entity
+  - 
+5. update the configuration manager in src config
+6. update the components
+7. update the pipeline
+  - Batch 
+  - Training
+8. update the main.py
+
+## 1. Data Ingestion
+## 2. Data Validation 
+## 3. Data Preprocessing
+## 4. Model training 
+## 5. Model evaluations
 
 
 
