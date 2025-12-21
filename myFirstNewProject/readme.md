@@ -1,6 +1,16 @@
 # My First End-to-End Project
 
 This is a template for building an end-to-end machine learning project with MLOps practices. It includes logging, configuration, and a modular structure for scalability.
+- Since the developer are working in different projects, each project would require its own dependencies (like libraries, packages,frameworks etc..). If I compile all together in one environment the storage efficiency becomes low and each project dependencies might contradict with each other. So, we need distinct environment for each project.
+
+## How to create environment using uv
+- Ensure that you initalized your gitHub repo.
+- ```uv init``` : This initalizes the uv package manager
+- ```uv venv``` : for creating virtual environment.
+- Ensure to activate your environment.
+- ```uv add <your package name>```: for adding dependencies
+- ```uv rm <your package name>``` : for removing package 
+- ```uv sync``` : for syncing the dependencies
 
 ## Prerequisites
 - Python 3.11
@@ -41,6 +51,8 @@ Use the following commands in bash in github codespace
 # Step 2: Create project template
 - We can use a package called Cookiecutter to create templates for our project.
 - Since this is our first project, we can create a custom template script.
+- This can be easily done using *"cookieCutter"*
+- But instead to practise them we create something called __"template.py"__
 
 ```bash
 uv run python template.py
@@ -102,6 +114,7 @@ The above command will run the template script and set up the project structure 
 1. update config.yaml
   - This file details about the data source management
   - Data source could be API, Datawarehouse , data lake etc.
+  - Here we define, the data entry points, which are artifacts
 2. update schema.yaml
   - Once the data is loaded, this yaml file ensures the data types and its validation --> input data schema
 3. update params.yaml 
