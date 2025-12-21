@@ -114,14 +114,22 @@ The above command will run the template script and set up the project structure 
 1. update config.yaml
   - This file details about the data source management
   - Data source could be API, Datawarehouse , data lake etc.
-  - Here we define, the data entry points, which are artifacts
-2. update schema.yaml
+  - Here we define, the data entry points, which are artifacts. Basically we are handling where the data is residing and how to fetch them into local repository, within local repository, where can we store them and fetch them.
+  - Since the data after the above process resides in local folder, now we need to define the schema for better quality extraction, so that we can use them in modeling, that's why we have **schema.yaml**
+2. update **schema.yaml**
   - Once the data is loaded, this yaml file ensures the data types and its validation --> input data schema
+    - We shall be using dataclass decorator wiith normal class, but why ?
+      - In normal class we will use ```self``` keyword, however when the decorator can use datatype itself.
+    - We have created the data_ingestion in config.yaml
+      - Now the same has be defined in the dataclass
+
 3. update params.yaml 
   - Specifically used when the parameters are updated.
 4. update the entity
-  - 
+  - This is used while modular coding.
 5. update the configuration manager in src config
+  - Here are we are creating the configuration class
+  - To create that we need paths, Since these paths does not change we are going add them in constants ```myFirstNewProject/src/my_first_end_to_end_project/constants/__init__.py```
 6. update the components
 7. update the pipeline
   - Batch 
