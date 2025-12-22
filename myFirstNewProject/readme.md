@@ -1,146 +1,132 @@
-# My First End-to-End Project
 
-This is a template for building an end-to-end machine learning project with MLOps practices. It includes logging, configuration, and a modular structure for scalability.
-- Since the developer are working in different projects, each project would require its own dependencies (like libraries, packages,frameworks etc..). If I compile all together in one environment the storage efficiency becomes low and each project dependencies might contradict with each other. So, we need distinct environment for each project.
+# My First New Project
 
-## How to create environment using uv
-- Ensure that you initalized your gitHub repo.
-- ```uv init``` : This initalizes the uv package manager
-- ```uv venv``` : for creating virtual environment.
-- Ensure to activate your environment.
-- ```uv add <your package name>```: for adding dependencies
-- ```uv rm <your package name>``` : for removing package 
-- ```uv sync``` : for syncing the dependencies
+Welcome to your first end-to-end MLOps project! This guide is designed for students to learn how to build, deploy, and automate machine learning workflows using industry best practices.
+
+## Why Use Separate Environments?
+
+Each project may require different libraries or package versions. Installing everything in a single environment can cause conflicts and waste storage. Always create a dedicated environment for each project.
+
+## Setting Up Your Environment with uv
+
+1. **Initialize your GitHub repository** (if you haven't already).
+2. Run `uv init --python 3.11` to initialize the uv package manager in your project directory.
+3. Run `uv venv` to create a new virtual environment for your project.
+4. **Activate your environment**:
+   - On Windows: `./.venv/Scripts/activate`
+   - On macOS/Linux: `source ./.venv/bin/activate`
+5. Use `uv add <package-name>` to add dependencies as needed.
+6. Use `uv rm <package-name>` to remove packages you no longer need.
+7. Run `uv sync` to synchronize dependencies listed in your configuration files.
+
+> **Tip:** `uv` is preferred because it is written in Rust, making it faster than conda or Python's built-in venv.
 
 ## Prerequisites
-- Python 3.11
-- `uv` package manager (install via `pip install uv` or from [uv's website](https://github.com/astral-sh/uv))
 
-# Step 1: Creating environment and activating it
-- Environment is created using the `uv` package manager.
-- Python version used is 3.11.
-- Commands used:
+- Python 3.11 or higher
+- `uv` package manager ([installation guide](https://github.com/astral-sh/uv) or run `pip install uv`)
 
-```cmd
-uv init --python 3.11
-uv venv
-.\.venv\Scripts\activate
-```
+## Special Note for GitHub Codespaces
 
-```bash
-uv init --python 3.11
-uv sync
-source ./.venv/bin/activate    # if bash
-clear                           # to clear all the above information in bash
-```
+If you are using GitHub Codespaces and want to run Jupyter notebooks (`.ipynb` files), you may need to set up the kernel:
 
-- The environment can be created in multiple ways:
-  1. Using conda
-  2. Using uv
-  3. Using Python's built-in venv
+1. `uv add ipykernel`  
+2. If that fails: `uv pip install ipykernel`
+3. `python -m ipykernel install --user --name=.venv --display-name "Python (.venv)"`
+4. Restart the application once done.
 
-- I preferred `uv` because it is written in Rust, making executions faster than conda and Python's venv.
+## Project Structure
 
-## In any case if you are github codespace then selection of kernel while executing ```.ipynb``` file becomes complex.
-Use the following commands in bash in github codespace
-1. ```uv add ipykernel```
-2. Else : ```uv pip install ipykernel```
-3. ```python -m ipykernel install --user --name=.venv --display-name "Python (.venv)"```
-4. restart the application once done.
+- `main.py`: Entry point for the project
+- `params.yaml`: Configuration file for hyperparameters and other settings
+- `config/`: Contains configuration files
+- `src/`: Source code for the project
+- `tests/`: Test cases for the project
+- `Dockerfile`: Docker configuration for containerizing the project
+- `requirements.txt`: List of Python dependencies
+- `setup.py`: Script for installing the project as a package
+- `readme.md`: Project documentation
 
-# Step 2: Create project template
-- We can use a package called Cookiecutter to create templates for our project.
-- Since this is our first project, we can create a custom template script.
-- This can be easily done using *"cookieCutter"*
-- But instead to practise them we create something called __"template.py"__
+## Getting Started
+
+1. Clone the repository from GitHub.
+2. Install the required dependencies with `pip install -r requirements.txt` (or use `uv sync` if you are using uv).
+3. Run the project using `python main.py`.
+
+## Features
+
+- Complete end-to-end machine learning workflow
+- Modular and organized code structure
+- Easy configuration management
+- Built-in logging and exception handling
+- Docker support for reproducibility
+
+## Step 1: Create Project Template
+
+You can use a package like Cookiecutter to create templates, but for this project, a custom script `template.py` is provided. Run:
 
 ```bash
 uv run python template.py
 ```
 
-The above command will run the template script and set up the project structure by creating necessary directories and files.
+This will set up the project structure by creating necessary directories and files.
 
-# Step 3: Logging system setup
-- We log every action happening in the project, so a logger is necessary.
-- Why is logging essential?
-  - Logging is essential as it makes debugging and understanding the flow of execution easier. It also allows for fallback mechanisms when the system fails frequently.
-- How to log them?
-  - Logs can be created using `logger.info()`, and there are multiple exceptions and errors that can be handled efficiently and caught easily.
-- In this project, the entire logging is handled in the logger file located at:
-  ```
-  src/my_first_end_to_end_project/logger
-  ```
-  - The logger function is written within the logger folder, and can be imported since an `__init__.py` file is available.
-  - A basic logging function is created in `logger/__init__.py`.
-  - Logs are stored in the "my_execution_logs" directory as "logged_summary.log".
+## Step 2: Logging System Setup
 
-# Step 4: Common functionality setup
-- Common functions are used across different modules within the src folder, similar to the log function.
-- These are stored in `src/my_first_end_to_end_project/utils/common_utils.py`.
+Logging is essential for debugging and understanding the flow of execution. All logging is handled in `src/my_first_end_to_end_project/logger`. Logs are stored in the `my_execution_logs` directory as `logged_summary.log`.
 
-## Handling yaml file
-- it is essential to use **BoxConfigError** while handling Yaml file, as they are handled more efficiently.
-    - ```Use dicts for data. Use ConfigBox for configuration.```
-    - ConfigBox is unidirection, you can load it but does not get manipulated thus ConfigBox output are immutable.
-    - can find the code and example in ```research.ipynb```
+## Step 3: Common Functionality
 
-- Use **ensure_annotation** decorator while using YAML file.
-  - This ensure_annotations helps to pass the arguments as mentioned in argument only.
-    ```
-    def get_product(x:int, y:int)-> int:
-      return x*y   
-    output = get_product(5,"3")
-    print(output)  # output : "33333"
+Common functions used across modules are stored in `src/my_first_end_to_end_project/utils/common_utils.py`.
 
-    # To overcome the above situation, we use ensure_annotations
-    from ensure import ensure_annotations
-    def get_product(x:int, y:int)-> int:
-      return x*y
+### Handling YAML Files
 
-      # Now this will throw error
-    ```
+- Use `ConfigBox` for configuration (immutable, safer than dict for configs).
+- Use the `ensure_annotations` decorator to enforce type safety in functions.
 
-  ## Now building common functions that could be used all over the project
-  1. read_yaml
-  2. create_directories
-  3. save_json
-  4. load_json
-  5. save_bin (save model)
-  6. load_bin (load model)
-- as from the above functions we can note that these functions are used across different files and common.
+Example:
 
-# Step-5: Creation of ML pipelines
-## Workflow creation steps
-1. update config.yaml
-  - This file details about the data source management
-  - Data source could be API, Datawarehouse , data lake etc.
-  - Here we define, the data entry points, which are artifacts. Basically we are handling where the data is residing and how to fetch them into local repository, within local repository, where can we store them and fetch them.
-  - Since the data after the above process resides in local folder, now we need to define the schema for better quality extraction, so that we can use them in modeling, that's why we have **schema.yaml**
-2. update **schema.yaml**
-  - Once the data is loaded, this yaml file ensures the data types and its validation --> input data schema
-    - We shall be using dataclass decorator wiith normal class, but why ?
-      - In normal class we will use ```self``` keyword, however when the decorator can use datatype itself.
-    - We have created the data_ingestion in config.yaml
-      - Now the same has be defined in the dataclass
+```python
+from ensure import ensure_annotations
 
-3. update params.yaml 
-  - Specifically used when the parameters are updated.
-4. update the entity
-  - This is used while modular coding.
-5. update the configuration manager in src config
-  - Here are we are creating the configuration class
-  - To create that we need paths, Since these paths does not change we are going add them in constants ```myFirstNewProject/src/my_first_end_to_end_project/constants/__init__.py```
-6. update the components
-7. update the pipeline
-  - Batch 
-  - Training
-8. update the main.py
+@ensure_annotations
+def get_product(x: int, y: int) -> int:
+    return x * y
+```
 
-## 1. Data Ingestion
-## 2. Data Validation 
-## 3. Data Preprocessing
-## 4. Model training 
-## 5. Model evaluations
+## Common Utility Functions
+
+1. `read_yaml`
+2. `create_directories`
+3. `save_json`
+4. `load_json`
+5. `save_bin` (save model)
+6. `load_bin` (load model)
+
+## Step 4: ML Pipeline Creation
+
+### Workflow Steps
+
+1. Update `config.yaml` (data source management)
+2. Update `schema.yaml` (data validation and schema)
+3. Update `params.yaml` (parameter management)
+4. Update the entity module (for modular coding)
+5. Update the configuration manager in `src/config` (define configuration classes and constants)
+6. Update components (modular pipeline steps)
+7. Update the pipeline (batch, training, etc.)
+8. Update `main.py` (entry point)
+
+### Typical ML Pipeline Stages
+
+1. Data Ingestion
+2. Data Validation
+3. Data Preprocessing
+4. Model Training
+5. Model Evaluation
+
+## License
+
+This project is licensed under the MIT License.
 
 
 
