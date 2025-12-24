@@ -11,6 +11,7 @@ Each project may require different libraries or package versions. Installing eve
 
 1. **Initialize your GitHub repository** (if you haven't already).
 2. Run `uv init --python 3.11` to initialize the uv package manager in your project directory.
+    > **Note:** `pip install uv` installs a Python wrapper, not the full Rust binary. For best performance and all features, install the Rust binary from the [official repository](https://github.com/astral-sh/uv#installation).
 3. Run `uv venv` to create a new virtual environment for your project.
 4. **Activate your environment**:
    - On Windows: `./.venv/Scripts/activate`
@@ -24,7 +25,8 @@ Each project may require different libraries or package versions. Installing eve
 ## Prerequisites
 
 - Python 3.11 or higher
-- `uv` package manager ([installation guide](https://github.com/astral-sh/uv) or run `pip install uv`)
+- `uv` package manager ([installation guide](https://github.com/astral-sh/uv)).
+    - If you use `pip install uv`, you get a Python wrapper, not the full Rust binary. For full features and speed, follow the official installation guide.
 
 ## Special Note for GitHub Codespaces
 
@@ -83,6 +85,7 @@ Common functions used across modules are stored in `src/my_first_end_to_end_proj
 
 - Use `ConfigBox` for configuration (immutable, safer than dict for configs).
 - Use the `ensure_annotations` decorator to enforce type safety in functions.
+    - The `ensure` package is third-party and must be installed: `pip install ensure`
 
 Example:
 
@@ -91,7 +94,7 @@ from ensure import ensure_annotations
 
 @ensure_annotations
 def get_product(x: int, y: int) -> int:
-    return x * y
+        return x * y
 ```
 
 ## Common Utility Functions
@@ -107,18 +110,66 @@ def get_product(x: int, y: int) -> int:
 
 ### Workflow Steps
 
-1. Update `config.yaml` (data source management)
-2. Update `schema.yaml` (data validation and schema)
-3. Update `params.yaml` (parameter management)
+1. Update `config.yaml` (data source management --> data input, loading etc.)
+2. Update `schema.yaml` (data validation and schema --> Schema management of input data)
+3. Update `params.yaml` (parameter management, managing all the parameters)
 4. Update the entity module (for modular coding)
 5. Update the configuration manager in `src/config` (define configuration classes and constants)
+    - To update the configuration manager, we need to read all the Yaml file 
+    - YAML file cannot be directly called into the function and read
+        - We navigate to `src/my_first_end_to_end_project/constants` and write where the yaml directories are located.
+        - These constants are folder, which contains where the .yaml directories are stored.
+            ```
+            # within constants/__init__.py
+            from pathlib import Path
+
+
+            CONFIG_FILE_PATH = Path("config/config.yaml")
+            PARAMS_FILE_PATH = Path("params.yaml")
+            SCHEMA_FILE_PATH = Path("schema.yaml")
+            ```   
+
 6. Update components (modular pipeline steps)
-7. Update the pipeline (batch, training, etc.)
+7. Update the pipeline (training --> batch prediction etc.)
 8. Update `main.py` (entry point)
 
 ### Typical ML Pipeline Stages
 
 1. Data Ingestion
+    - Create a sample file in `research\01_data_ingestion.ipynb`
+    - Check the current working directory `%pwd` then ensure, they are in the root folder of the project else use cmd `os.chdir("../")`
+    - update the `config.yaml` file
+        - input for data ingestion file, now navigate to `config.yaml` file, write this down
+            ```
+            artifacts_root: artifacts
+
+            data_ingestion:
+                root_dir: artifacts/data_ingestion
+                source_URL: https://github.com/krishnaik06/datasets/raw/refs/heads/main/winequality-data.zip  # Connect to database or API or any other data source
+                local_data_file: artifacts/data_ingestion/data.zip
+                unzip_dir: artifacts/data_ingestion
+            ``` 
+        - now to test all, move to `research/01_data_ingestion.ipynb`
+            - usage of dataclass and pathlib for more functionality
+            - Just like how we use the `ensure_annotations` to set the datatype for the arguments in **functions**, we use dataclass for ensuring the datatype of input arguments to the **class**
+                - We used to write the `def __init__(self, name:str, .....): then self.ky1 = name etc.` inorder to overcome this clutter the dataclass is used.
+                - Traditional method:
+                    ```
+                    class dataIngestionConfig:
+                        def __init__(self, root_dir: Path, source_URL: str, local_data_file: Path):
+                            self.root_dir = root_dir
+                            self.source_URL = source_URL
+                            self.local_data_file = local_data_file
+                    ```
+                - The same code can be written as 
+                    ```
+                    @dataclass
+                    class dataIngestionConfig:
+                        root_dir: Path
+                        source_URL: str
+                        local_data_file: Path
+                    ```
+                - *Note* : It is wise to use self and init method, if you are using the default path.
 2. Data Validation
 3. Data Preprocessing
 4. Model Training
