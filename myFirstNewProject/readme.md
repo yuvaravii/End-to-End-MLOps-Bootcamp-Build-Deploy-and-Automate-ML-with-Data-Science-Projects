@@ -124,6 +124,16 @@ def get_product(x: int, y: int) -> int:
 4. Model Training
 5. Model Evaluation
 
+#### Why modular coding ?
+- This pipeline can be built using the .ipynb notebook as well, however we would prefer modular coding as they are the production ready coes.
+- The pipelines can be tested in .ipynb notebooks, but cannot be used in the production as they make it complex to connect with front end and dataflow management too.
+
+
+
+
+
+
+
 ## License
 
 This project is licensed under the MIT License.
