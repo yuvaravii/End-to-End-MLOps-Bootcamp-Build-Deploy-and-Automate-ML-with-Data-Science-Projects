@@ -110,10 +110,11 @@ def get_product(x: int, y: int) -> int:
 
 ### Workflow Steps
 
-1. Update `config.yaml` (data source management --> data input, loading etc.)
-2. Update `schema.yaml` (data validation and schema --> Schema management of input data)
-3. Update `params.yaml` (parameter management, managing all the parameters)
+1. Update `config.yaml` (data source management --> data input, loading etc.) ; The yaml file should not be empty
+2. Update `schema.yaml` (data validation and schema --> Schema management of input data); The yaml file should not be empty
+3. Update `params.yaml` (parameter management, managing all the parameters) ; The yaml file should not be empty
 4. Update the entity module (for modular coding)
+    - Here we are defining the dataclass which is general, that can be imported in the configuration manager.
 5. Update the configuration manager in `src/config` (define configuration classes and constants)
     - To update the configuration manager, we need to read all the Yaml file 
     - YAML file cannot be directly called into the function and read
@@ -128,9 +129,13 @@ def get_product(x: int, y: int) -> int:
             PARAMS_FILE_PATH = Path("params.yaml")
             SCHEMA_FILE_PATH = Path("schema.yaml")
             ```   
-
+        - After updating entity with general dataclass of data_ingestion, update the configuration manager 
 6. Update components (modular pipeline steps)
+    - On completion of the data ingestion component, we need to create a python file for performing the data ingestion.
+    - create a python file in `src/my_first_end_to_end_project/component`
+    - now write the code for loading the configuration manager, function for downloading data and unzipping it.
 7. Update the pipeline (training --> batch prediction etc.)
+    - within `src/my_first_end_to_end_project/pipeline` --> create a folder `01_data_ingestion.py`
 8. Update `main.py` (entry point)
 
 ### Typical ML Pipeline Stages
