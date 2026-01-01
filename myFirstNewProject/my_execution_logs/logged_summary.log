@@ -1,43 +1,10 @@
-2025-12-17 04:56:48,165 - INFO - main - Starting my first logging system
-2025-12-17 05:00:01 - INFO - main - Starting my first logging system
-2026-01-01 11:04:18 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
-2026-01-01 11:04:18 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
-2026-01-01 11:05:49 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
-2026-01-01 11:05:49 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
-2026-01-01 11:06:29 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
-2026-01-01 11:06:29 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
-2026-01-01 11:07:12 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
-2026-01-01 11:07:12 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
-2026-01-01 11:08:15 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
-2026-01-01 11:08:15 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
-2026-01-01 11:08:15 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
-2026-01-01 11:08:15 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
-2026-01-01 11:09:34 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
-2026-01-01 11:09:34 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
-2026-01-01 11:09:34 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
-2026-01-01 11:09:34 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
-2026-01-01 11:13:47 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
-2026-01-01 11:13:47 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
-2026-01-01 11:13:47 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
-2026-01-01 11:13:47 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
-2026-01-01 11:16:09 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
-2026-01-01 11:16:09 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
-2026-01-01 11:16:09 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
-2026-01-01 11:16:09 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
-2026-01-01 11:16:36 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
-2026-01-01 11:16:36 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
-2026-01-01 11:16:36 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
-2026-01-01 11:16:36 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
-2026-01-01 11:27:37 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
-2026-01-01 11:27:37 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
-2026-01-01 11:27:37 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
-2026-01-01 11:27:37 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
-2026-01-01 11:32:51 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
-2026-01-01 11:32:51 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
-2026-01-01 11:32:51 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
-2026-01-01 11:32:51 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
-2026-01-01 11:32:51 - INFO - common_utils - Created directory Successfuly at: artifacts/data_ingestion 🥳
-2026-01-01 11:32:52 - INFO - 2686935457 - artifacts/data_ingestion/data.zip download! with following info : Connection: close
+2026-01-01 16:18:08 - INFO - main - >>>>> Stage : Data Ingestion Stage started execution <<<<<
+2026-01-01 16:18:08 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-01 16:18:08 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-01 16:18:08 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-01 16:18:08 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-01 16:18:08 - INFO - common_utils - Created directory Successfuly at: artifacts/data_ingestion 🥳
+2026-01-01 16:18:09 - INFO - data_ingestion - artifacts/data_ingestion/data.zip download! with following info : Connection: close
 Content-Length: 23329
 Cache-Control: max-age=300
 Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
@@ -47,19 +14,20 @@ Strict-Transport-Security: max-age=31536000
 X-Content-Type-Options: nosniff
 X-Frame-Options: deny
 X-XSS-Protection: 1; mode=block
-X-GitHub-Request-Id: E9AB:3BD445:172C2A1:290DD2D:69565B64
+X-GitHub-Request-Id: 505E:2C86DB:18686DD:2B03A15:69569E40
 Accept-Ranges: bytes
-Date: Thu, 01 Jan 2026 11:32:52 GMT
+Date: Thu, 01 Jan 2026 16:18:09 GMT
 Via: 1.1 varnish
-X-Served-By: cache-sin-wsss1830078-SIN
+X-Served-By: cache-sin-wsss1830089-SIN
 X-Cache: MISS
 X-Cache-Hits: 0
-X-Timer: S1767267172.118175,VS0,VE276
+X-Timer: S1767284289.419240,VS0,VE286
 Vary: Authorization,Accept-Encoding
 Access-Control-Allow-Origin: *
 Cross-Origin-Resource-Policy: cross-origin
-X-Fastly-Request-ID: c6de2722a3c4b35e7459526808c6bae31c2722a4
-Expires: Thu, 01 Jan 2026 11:37:52 GMT
+X-Fastly-Request-ID: 1c364473618a9848108128251786aa6d343ed507
+Expires: Thu, 01 Jan 2026 16:23:09 GMT
 Source-Age: 0
 
 
+2026-01-01 16:18:09 - INFO - main - >>>> Stage: Data Ingestion Stage completed <<<<
