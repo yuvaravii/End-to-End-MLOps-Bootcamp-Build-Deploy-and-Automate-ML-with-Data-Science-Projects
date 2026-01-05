@@ -140,7 +140,7 @@ def get_product(x: int, y: int) -> int:
 
 ### Typical ML Pipeline Stages
 
-1. Data Ingestion
+#### 1. Data Ingestion
     - Create a sample file in `research\01_data_ingestion.ipynb`
     - Check the current working directory `%pwd` then ensure, they are in the root folder of the project else use cmd `os.chdir("../")`
     - update the `config.yaml` file
@@ -175,10 +175,43 @@ def get_product(x: int, y: int) -> int:
                         local_data_file: Path
                     ```
                 - *Note* : It is wise to use self and init method, if you are using the default path.
-2. Data Validation
-3. Data Preprocessing
-4. Model Training
-5. Model Evaluation
+
+#### 2. Data Validation
+- Objective : Whenever the new data is flowing in the data type should not changes, if it changes then whole pipeline would burst and would cause error. Just like a water pipe line should not transfer concrete, which bursts the pipe. To check only the water is flowing in we are creating this step.
+- Workflow remains same:
+    - Step-1: update `config.yaml`
+        - ```
+            data_validation:
+                    root_dir: artifacts/data_validation
+                    unzip_data_dir: artifacts/data_ingestion/winequality-red.csv
+                    STATUS_FILE: artifacts/data_validation/status.txt
+                    ```
+        - updates the status.txt with True or False.
+
+    - Step-2: Update `schema.yaml`
+        - ``` 'fixed acidity': 'float64',
+                'volatile acidity': 'float64',
+                'citric acid': 'float64',
+                'residual sugar': 'float64',
+                'chlorides': 'float64',
+                'free sulfur dioxide': 'float64',
+                'total sulfur dioxide': 'float64',
+                'density': 'float64',
+                'pH': 'float64',
+                'sulphates': 'float64',
+                'alcohol': 'float64',
+                'quality': 'int64'
+            ```
+
+
+
+
+
+
+
+#### 3. Data Preprocessing
+#### 4. Model Training
+#### 5. Model Evaluation
 
 #### Why modular coding ?
 - This pipeline can be built using the .ipynb notebook as well, however we would prefer modular coding as they are the production ready coes.
