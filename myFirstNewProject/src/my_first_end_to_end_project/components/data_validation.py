@@ -1,7 +1,7 @@
 import os
-import pandas
+import pandas as pd
 from src.my_first_end_to_end_project.logger import logger
-from src.my_first_end_to_end_project.entity import (DataValidationConfig)
+from src.my_first_end_to_end_project.entity.config_entity import (DataValidationConfig)
 
 class DataValidation:
     def __init__(self, config:DataValidationConfig):

@@ -56,3 +56,33 @@ Source-Age: 0
 2026-01-05 13:47:46 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
 2026-01-05 13:47:46 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
 2026-01-05 13:47:46 - INFO - common_utils - Created directory Successfuly at: artifacts/data_validation 🥳
+2026-01-05 14:29:53 - INFO - main - >>>>> Stage : Data Ingestion Stage started execution <<<<<
+2026-01-05 14:29:53 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-05 14:29:53 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-05 14:29:53 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-05 14:29:53 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-05 14:29:53 - INFO - common_utils - Created directory Successfuly at: artifacts/data_ingestion 🥳
+2026-01-05 14:29:53 - INFO - data_ingestion - The file already exists in the local repository
+2026-01-05 14:29:53 - INFO - main - >>>> Stage: Data Ingestion Stage completed <<<<
+2026-01-05 14:29:53 - INFO - main - >>>>> Stage : Data Validation Stage started execution <<<<<
+2026-01-05 14:29:53 - ERROR - main - 'DataIngestionTrainingPipeline' object has no attribute 'initiate_data_validation'
+Traceback (most recent call last):
+  File "/workspaces/End-to-End-MLOps-Bootcamp-Build-Deploy-and-Automate-ML-with-Data-Science-Projects/myFirstNewProject/main.py", line 21, in <module>
+    data_ingestion.initiate_data_validation()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataIngestionTrainingPipeline' object has no attribute 'initiate_data_validation'. Did you mean: 'initiate_data_ingestion'?
+2026-01-05 14:32:49 - INFO - main - >>>>> Stage : Data Ingestion Stage started execution <<<<<
+2026-01-05 14:32:49 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-05 14:32:49 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-05 14:32:49 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-05 14:32:49 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-05 14:32:49 - INFO - common_utils - Created directory Successfuly at: artifacts/data_ingestion 🥳
+2026-01-05 14:32:49 - INFO - data_ingestion - The file already exists in the local repository
+2026-01-05 14:32:49 - INFO - main - >>>> Stage: Data Ingestion Stage completed <<<<
+2026-01-05 14:32:49 - INFO - main - >>>>> Stage : Data Validation Stage started execution <<<<<
+2026-01-05 14:32:49 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-05 14:32:49 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-05 14:32:49 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-05 14:32:49 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-05 14:32:49 - INFO - common_utils - Created directory Successfuly at: artifacts/data_validation 🥳
+2026-01-05 14:32:49 - INFO - main - >>>> Stage: Data Validation Stage completed <<<<
