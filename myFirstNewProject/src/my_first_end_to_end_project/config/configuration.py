@@ -1,6 +1,6 @@
 from src.my_first_end_to_end_project.constants import *
 from src.my_first_end_to_end_project.utils.common_utils import read_yaml, create_directories
-from src.my_first_end_to_end_project.entity.config_entity import (DataIngestionConfig, DataValidationConfig)
+from src.my_first_end_to_end_project.entity.config_entity import (DataIngestionConfig, DataValidationConfig,DataTransformationConfig)
 
 
 class ConfigurationManager:
@@ -46,4 +46,13 @@ class ConfigurationManager:
         )
 
         return data_validation_config
+    
+    def get_data_transformation_config(self)->DataTransformationConfig:
+        config = self.config.data_transformation
+        create_directories([config.root_dir])
+        data_transformation_config = DataTransformationConfig(
+            root_dir=Path(config.root_dir),
+            data_path=Path(config.data_path)
+        )
+        return data_transformation_config
     

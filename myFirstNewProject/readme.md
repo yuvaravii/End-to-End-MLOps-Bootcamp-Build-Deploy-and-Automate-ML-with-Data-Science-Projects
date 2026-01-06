@@ -207,6 +207,22 @@ def get_product(x: int, y: int) -> int:
 
 
 
+#### 3. Data Preprocessing / Transformation
+- Major steps in preprocessing
+    - Feature engineering 
+    - Data preprocessing
+    - train and test split
+
+- These steps repeat for every stage
+    - update config.yaml
+    - update params.yaml
+    - update schema.yaml
+    - update entity
+    - update configuration manager
+    - update component
+    - update pipeline
+    - update main.py
+
 
 
 #### 3. Data Preprocessing

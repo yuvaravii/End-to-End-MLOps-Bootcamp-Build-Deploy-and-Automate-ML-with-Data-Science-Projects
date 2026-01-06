@@ -86,3 +86,45 @@ AttributeError: 'DataIngestionTrainingPipeline' object has no attribute 'initiat
 2026-01-05 14:32:49 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
 2026-01-05 14:32:49 - INFO - common_utils - Created directory Successfuly at: artifacts/data_validation 🥳
 2026-01-05 14:32:49 - INFO - main - >>>> Stage: Data Validation Stage completed <<<<
+2026-01-06 17:17:25 - ERROR - 742440598 - name 'read_yaml_file' is not defined
+Traceback (most recent call last):
+  File "/tmp/ipykernel_16026/742440598.py", line 2, in <module>
+    config = ConfigurationManager()
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_16026/3467082294.py", line 22, in __init__
+    self.config = read_yaml_file(config_filepath)
+                  ^^^^^^^^^^^^^^
+NameError: name 'read_yaml_file' is not defined
+2026-01-06 17:17:44 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-06 17:17:44 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-06 17:17:44 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-06 17:17:44 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-06 17:17:44 - INFO - common_utils - Created directory Successfuly at: artifacts/data_transformation 🥳
+2026-01-06 17:17:44 - INFO - 2925814296 - Train test split completed. 
+2026-01-06 17:17:44 - INFO - 2925814296 - Train data shape : (1199, 12)
+2026-01-06 17:17:44 - INFO - 2925814296 - Test data shape : (400, 12)
+2026-01-06 18:08:56 - INFO - main - >>>>> Stage : Data Ingestion Stage started execution <<<<<
+2026-01-06 18:08:56 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-06 18:08:56 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-06 18:08:56 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-06 18:08:56 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-06 18:08:56 - INFO - common_utils - Created directory Successfuly at: artifacts/data_ingestion 🥳
+2026-01-06 18:08:56 - INFO - data_ingestion - The file already exists in the local repository
+2026-01-06 18:08:56 - INFO - main - >>>> Stage: Data Ingestion Stage completed <<<<
+2026-01-06 18:08:56 - INFO - main - >>>>> Stage : Data Validation Stage started execution <<<<<
+2026-01-06 18:08:56 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-06 18:08:56 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-06 18:08:56 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-06 18:08:56 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-06 18:08:56 - INFO - common_utils - Created directory Successfuly at: artifacts/data_validation 🥳
+2026-01-06 18:08:56 - INFO - main - >>>> Stage: Data Validation Stage completed <<<<
+2026-01-06 18:08:56 - INFO - main - >>>>> Stage : Data Transformation Stage started execution <<<<<
+2026-01-06 18:08:56 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-06 18:08:56 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-06 18:08:56 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-06 18:08:56 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-06 18:08:56 - INFO - common_utils - Created directory Successfuly at: artifacts/data_transformation 🥳
+2026-01-06 18:08:56 - INFO - data_transformation - Train test split completed. 
+2026-01-06 18:08:56 - INFO - data_transformation - Train data shape : (1199, 12)
+2026-01-06 18:08:56 - INFO - data_transformation - Test data shape : (400, 12)
+2026-01-06 18:08:56 - INFO - main - >>>> Stage: Data Transformation Stage completed <<<<
