@@ -1,1 +1,4 @@
-key1: value1
+ElasticNet:
+  alpha: 0.2
+  l1_ratio: 0.1
+

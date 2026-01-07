@@ -223,17 +223,19 @@ def get_product(x: int, y: int) -> int:
     - update pipeline
     - update main.py
 
-
-
-#### 3. Data Preprocessing
 #### 4. Model Training
+- The same workflow as above will follow, however this time, we have to update the details of the models used.
+- Need to update the model types and models in `params.yaml`
+- While importing within component 
+    - import from entity as they verify the dataclass and they are the orginal class
+    - dont import from configuration as they are logic for loading and configuring
+
 #### 5. Model Evaluation
+
 
 #### Why modular coding ?
 - This pipeline can be built using the .ipynb notebook as well, however we would prefer modular coding as they are the production ready coes.
 - The pipelines can be tested in .ipynb notebooks, but cannot be used in the production as they make it complex to connect with front end and dataflow management too.
-
-
 
 
 

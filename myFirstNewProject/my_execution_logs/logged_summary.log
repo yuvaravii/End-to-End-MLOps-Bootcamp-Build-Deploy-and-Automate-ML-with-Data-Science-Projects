@@ -128,3 +128,201 @@ NameError: name 'read_yaml_file' is not defined
 2026-01-06 18:08:56 - INFO - data_transformation - Train data shape : (1199, 12)
 2026-01-06 18:08:56 - INFO - data_transformation - Test data shape : (400, 12)
 2026-01-06 18:08:56 - INFO - main - >>>> Stage: Data Transformation Stage completed <<<<
+2026-01-07 04:40:23 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-07 04:40:23 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-07 04:40:23 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-07 04:40:23 - ERROR - 2115163532 - 'ConfigurationManager' object has no attribute 'config'
+Traceback (most recent call last):
+  File "/tmp/ipykernel_52074/2115163532.py", line 2, in <module>
+    config = ConfigurationManager()
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_52074/3186974027.py", line 33, in __init__
+    create_directories([self.config.artifacts_root])
+                        ^^^^^^^^^^^
+AttributeError: 'ConfigurationManager' object has no attribute 'config'
+2026-01-07 04:42:42 - ERROR - 2115163532 - [Errno 2] No such file or directory: 'config/config.yaml'
+Traceback (most recent call last):
+  File "/tmp/ipykernel_52074/2115163532.py", line 2, in <module>
+    config = ConfigurationManager()
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_52074/4063362508.py", line 30, in __init__
+    self.config = read_yaml(config_file_path)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/ensure/main.py", line 872, in __call__
+    return_val = self.f(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/End-to-End-MLOps-Bootcamp-Build-Deploy-and-Automate-ML-with-Data-Science-Projects/myFirstNewProject/src/my_first_end_to_end_project/utils/common_utils.py", line 36, in read_yaml
+    raise e
+  File "/workspaces/End-to-End-MLOps-Bootcamp-Build-Deploy-and-Automate-ML-with-Data-Science-Projects/myFirstNewProject/src/my_first_end_to_end_project/utils/common_utils.py", line 29, in read_yaml
+    with open(path_to_yaml) as yaml_file:
+         ^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'config/config.yaml'
+2026-01-07 04:43:03 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-07 04:43:03 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-07 04:43:03 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-07 04:43:03 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-07 04:43:04 - ERROR - 2115163532 - 'ModelTrainerConfig' object has no attribute 'test_data_path_data_path'
+Traceback (most recent call last):
+  File "/tmp/ipykernel_53251/2115163532.py", line 5, in <module>
+    model_trainer_config.train()
+  File "/tmp/ipykernel_53251/4063362508.py", line 69, in train
+    test_data = pd.read_csv(self.config.test_data_path_data_path)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ModelTrainerConfig' object has no attribute 'test_data_path_data_path'
+2026-01-07 04:44:10 - ERROR - 2115163532 - [Errno 2] No such file or directory: 'config/config.yaml'
+Traceback (most recent call last):
+  File "/tmp/ipykernel_53251/2115163532.py", line 2, in <module>
+    config = ConfigurationManager()
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_53251/1018242677.py", line 30, in __init__
+    self.config = read_yaml(config_file_path)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/ensure/main.py", line 872, in __call__
+    return_val = self.f(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/End-to-End-MLOps-Bootcamp-Build-Deploy-and-Automate-ML-with-Data-Science-Projects/myFirstNewProject/src/my_first_end_to_end_project/utils/common_utils.py", line 36, in read_yaml
+    raise e
+  File "/workspaces/End-to-End-MLOps-Bootcamp-Build-Deploy-and-Automate-ML-with-Data-Science-Projects/myFirstNewProject/src/my_first_end_to_end_project/utils/common_utils.py", line 29, in read_yaml
+    with open(path_to_yaml) as yaml_file:
+         ^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'config/config.yaml'
+2026-01-07 04:44:25 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-07 04:44:25 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-07 04:44:25 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-07 04:44:25 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-07 04:44:25 - ERROR - 2115163532 - 'ModelTrainer' object has no attribute 'cofig'
+Traceback (most recent call last):
+  File "/tmp/ipykernel_53881/2115163532.py", line 5, in <module>
+    model_trainer_config.train()
+  File "/tmp/ipykernel_53881/1018242677.py", line 71, in train
+    train_x = train_data.drop([self.cofig.target_column],axis =1)
+                               ^^^^^^^^^^
+AttributeError: 'ModelTrainer' object has no attribute 'cofig'. Did you mean: 'config'?
+2026-01-07 04:44:56 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-07 04:44:56 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-07 04:44:56 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-07 04:44:56 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-07 04:44:56 - ERROR - 2115163532 - [Errno 2] No such file or directory: 'artifacts/model_trainer/model.joblib'
+Traceback (most recent call last):
+  File "/tmp/ipykernel_54130/2115163532.py", line 5, in <module>
+    model_trainer_config.train()
+  File "/tmp/ipykernel_54130/92852435.py", line 79, in train
+    joblib.dump(lr, os.path.join(self.config.root_dir, self.config.model_name))
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 599, in dump
+    with open(filename, "wb") as f:
+         ^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts/model_trainer/model.joblib'
+2026-01-07 05:18:39 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-07 05:18:39 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-07 05:18:39 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-07 05:18:39 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-07 05:18:39 - ERROR - 2115163532 - "'ConfigBox' object has no attribute 'root_dir'"
+Traceback (most recent call last):
+  File "box/box.py", line 594, in box.box.Box.__getitem__
+KeyError: 'root_dir'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box/box.py", line 633, in box.box.Box.__getattr__
+  File "box/box.py", line 621, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'root_dir'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box/box.py", line 635, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'root_dir'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box/config_box.py", line 29, in box.config_box.ConfigBox.__getattr__
+  File "box/box.py", line 649, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'root_dir'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box/box.py", line 594, in box.box.Box.__getitem__
+KeyError: 'root_dir'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box/box.py", line 633, in box.box.Box.__getattr__
+  File "box/box.py", line 621, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'root_dir'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box/box.py", line 635, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'root_dir'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/ipykernel_67995/2115163532.py", line 3, in <module>
+    model_trainer_config = config.get_model_trainer_config()
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_67995/2589077766.py", line 41, in get_model_trainer_config
+    create_directories([self.config.root_dir])
+                        ^^^^^^^^^^^^^^^^^^^^
+  File "box/config_box.py", line 31, in box.config_box.ConfigBox.__getattr__
+  File "box/box.py", line 649, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'root_dir'"
+2026-01-07 05:19:13 - ERROR - 2115163532 - [Errno 2] No such file or directory: 'config/config.yaml'
+Traceback (most recent call last):
+  File "/tmp/ipykernel_67995/2115163532.py", line 2, in <module>
+    config = ConfigurationManager()
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_67995/1734501084.py", line 30, in __init__
+    self.config = read_yaml(config_file_path)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/ensure/main.py", line 872, in __call__
+    return_val = self.f(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/End-to-End-MLOps-Bootcamp-Build-Deploy-and-Automate-ML-with-Data-Science-Projects/myFirstNewProject/src/my_first_end_to_end_project/utils/common_utils.py", line 36, in read_yaml
+    raise e
+  File "/workspaces/End-to-End-MLOps-Bootcamp-Build-Deploy-and-Automate-ML-with-Data-Science-Projects/myFirstNewProject/src/my_first_end_to_end_project/utils/common_utils.py", line 29, in read_yaml
+    with open(path_to_yaml) as yaml_file:
+         ^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'config/config.yaml'
+2026-01-07 05:19:30 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-07 05:19:30 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-07 05:19:30 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-07 05:19:30 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-07 05:19:30 - INFO - common_utils - Created directory Successfuly at: artifacts/model_trainer 🥳
+2026-01-07 06:02:12 - INFO - main - >>>>> Stage : Data Ingestion Stage started execution <<<<<
+2026-01-07 06:02:12 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-07 06:02:12 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-07 06:02:12 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-07 06:02:12 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-07 06:02:12 - INFO - common_utils - Created directory Successfuly at: artifacts/data_ingestion 🥳
+2026-01-07 06:02:12 - INFO - data_ingestion - The file already exists in the local repository
+2026-01-07 06:02:12 - INFO - main - >>>> Stage: Data Ingestion Stage completed <<<<
+2026-01-07 06:02:12 - INFO - main - >>>>> Stage : Data Validation Stage started execution <<<<<
+2026-01-07 06:02:12 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-07 06:02:12 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-07 06:02:12 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-07 06:02:12 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-07 06:02:12 - INFO - common_utils - Created directory Successfuly at: artifacts/data_validation 🥳
+2026-01-07 06:02:12 - INFO - main - >>>> Stage: Data Validation Stage completed <<<<
+2026-01-07 06:02:12 - INFO - main - >>>>> Stage : Data Transformation Stage started execution <<<<<
+2026-01-07 06:02:12 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-07 06:02:12 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-07 06:02:12 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-07 06:02:12 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-07 06:02:12 - INFO - common_utils - Created directory Successfuly at: artifacts/data_transformation 🥳
+2026-01-07 06:02:12 - INFO - data_transformation - Train test split completed. 
+2026-01-07 06:02:12 - INFO - data_transformation - Train data shape : (1199, 12)
+2026-01-07 06:02:12 - INFO - data_transformation - Test data shape : (400, 12)
+2026-01-07 06:02:12 - INFO - main - >>>> Stage: Data Transformation Stage completed <<<<
+2026-01-07 06:02:12 - INFO - main - >>>>> Stage : Model Training Stage started execution <<<<<
+2026-01-07 06:02:12 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-07 06:02:12 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-07 06:02:12 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-07 06:02:12 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-07 06:02:12 - INFO - common_utils - Created directory Successfuly at: artifacts/model_trainer 🥳
+2026-01-07 06:02:12 - INFO - main - >>>> Stage: Model Training Stage completed <<<<

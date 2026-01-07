@@ -1,6 +1,6 @@
 from src.my_first_end_to_end_project.constants import *
 from src.my_first_end_to_end_project.utils.common_utils import read_yaml, create_directories
-from src.my_first_end_to_end_project.entity.config_entity import (DataIngestionConfig, DataValidationConfig,DataTransformationConfig)
+from src.my_first_end_to_end_project.entity.config_entity import (DataIngestionConfig, DataValidationConfig,DataTransformationConfig, ModelTrainerConfig)
 
 
 class ConfigurationManager:
@@ -56,3 +56,21 @@ class ConfigurationManager:
         )
         return data_transformation_config
     
+    def get_model_trainer_config(self)-> ModelTrainerConfig:
+        config = self.config.model_trainer
+        params = self.params.ElasticNet
+        schema = self.schema.TARGET_COUMN
+        # creating the directory for models store
+        create_directories([config.root_dir])
+
+        model_trainer_config = ModelTrainerConfig(
+            root_dir= config.root_dir,
+            train_data_path=config.train_data_path,
+            test_data_path = config.test_data_path,
+            model_name = config.model_name,
+            alpha = params.alpha,
+            l1_ratio= params.l1_ratio,
+            target_column= schema.name
+        )
+
+        return model_trainer_config
