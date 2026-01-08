@@ -326,3 +326,31 @@ FileNotFoundError: [Errno 2] No such file or directory: 'config/config.yaml'
 2026-01-07 06:02:12 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
 2026-01-07 06:02:12 - INFO - common_utils - Created directory Successfuly at: artifacts/model_trainer 🥳
 2026-01-07 06:02:12 - INFO - main - >>>> Stage: Model Training Stage completed <<<<
+2026-01-08 07:14:39 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-08 07:14:39 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-08 07:14:39 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-08 07:14:39 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-08 07:14:39 - INFO - common_utils - Created directory Successfuly at: artifacts/model_evaluation 🥳
+2026-01-08 07:16:00 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-08 07:16:00 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-08 07:16:00 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-08 07:16:00 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-08 07:16:00 - INFO - common_utils - Created directory Successfuly at: artifacts/model_evaluation 🥳
+2026-01-08 07:19:26 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-08 07:19:26 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-08 07:19:26 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-08 07:19:26 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-08 07:19:26 - INFO - common_utils - Created directory Successfuly at: artifacts/model_evaluation 🥳
+2026-01-08 07:19:27 - INFO - common_utils - Json file saved at: artifacts/model_evaluation/metric.json 🥳
+2026-01-08 07:22:15 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-08 07:22:15 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-08 07:22:15 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-08 07:22:15 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-08 07:22:15 - INFO - common_utils - Created directory Successfuly at: artifacts/model_evaluation 🥳
+2026-01-08 07:22:16 - INFO - common_utils - Json file saved at: artifacts/model_evaluation/metric.json 🥳
+2026-01-08 07:23:50 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-08 07:23:50 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-08 07:23:50 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-08 07:23:50 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-08 07:23:50 - INFO - common_utils - Created directory Successfuly at: artifacts/model_evaluation 🥳
+2026-01-08 07:23:52 - INFO - common_utils - Json file saved at: artifacts/model_evaluation/metric.json 🥳

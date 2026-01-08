@@ -231,6 +231,12 @@ def get_product(x: int, y: int) -> int:
     - dont import from configuration as they are logic for loading and configuring
 
 #### 5. Model Evaluation
+- For evaluation we will be using different different tools like 
+    - MLflow
+    - Dagshub
+        - Data versioning
+        - code versioning
+        - Experiments versioning 
 
 
 #### Why modular coding ?
