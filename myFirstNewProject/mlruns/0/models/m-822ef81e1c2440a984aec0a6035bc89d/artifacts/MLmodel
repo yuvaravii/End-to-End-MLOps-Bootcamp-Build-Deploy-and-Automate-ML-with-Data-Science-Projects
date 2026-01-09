@@ -1,0 +1,22 @@
+artifact_path: /workspaces/End-to-End-MLOps-Bootcamp-Build-Deploy-and-Automate-ML-with-Data-Science-Projects/myFirstNewProject/mlruns/0/models/m-822ef81e1c2440a984aec0a6035bc89d/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.11.14
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.8.0
+mlflow_version: 3.8.1
+model_id: m-822ef81e1c2440a984aec0a6035bc89d
+model_size_bytes: 913
+model_uuid: m-822ef81e1c2440a984aec0a6035bc89d
+prompts: null
+run_id: a643908b5d77467593eaa995146e71a7
+utc_time_created: '2026-01-09 10:21:32.007638'

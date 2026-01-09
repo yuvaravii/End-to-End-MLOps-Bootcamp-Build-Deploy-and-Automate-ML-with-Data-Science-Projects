@@ -1,6 +1,6 @@
 from src.my_first_end_to_end_project.constants import *
 from src.my_first_end_to_end_project.utils.common_utils import read_yaml, create_directories
-from src.my_first_end_to_end_project.entity.config_entity import (DataIngestionConfig, DataValidationConfig,DataTransformationConfig, ModelTrainerConfig)
+from src.my_first_end_to_end_project.entity.config_entity import (DataIngestionConfig, ModelEvaluationConfig,DataValidationConfig,DataTransformationConfig, ModelTrainerConfig)
 
 
 class ConfigurationManager:
@@ -59,7 +59,7 @@ class ConfigurationManager:
     def get_model_trainer_config(self)-> ModelTrainerConfig:
         config = self.config.model_trainer
         params = self.params.ElasticNet
-        schema = self.schema.TARGET_COUMN
+        schema = self.schema.TARGET_COLUMN
         # creating the directory for models store
         create_directories([config.root_dir])
 
@@ -74,3 +74,21 @@ class ConfigurationManager:
         )
 
         return model_trainer_config
+    
+    def get_model_evaluation_config(self)->ModelEvaluationConfig:
+        config = self.config.model_evaluation
+        params = self.params.ElasticNet
+        schema = self.schema.TARGET_COLUMN
+
+        create_directories([config.root_dir])
+        model_evaluation_config = ModelEvaluationConfig(
+            root_dir= config.root_dir,
+            test_data_path=config.test_data_path,
+            model_path= config.model_path,
+            all_params= params,
+            metric_file_name= config.metric_file_name,
+            target_column= schema.name,
+            mlflow_uri="https://dagshub.com/rj.workhub/End-to-End-MLOps-Bootcamp-Build-Deploy-and-Automate-ML-with-Data-Science-Projects.mlflow"
+        )
+
+        return model_evaluation_config
