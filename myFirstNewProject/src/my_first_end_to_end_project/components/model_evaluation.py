@@ -10,10 +10,10 @@ import mlflow.sklearn
 import numpy as np
 import joblib
 
-import os
-os.environ["MLFLOW_TRACKING_URI"] = "https://dagshub.com/rj.workhub/End-to-End-MLOps-Bootcamp-Build-Deploy-and-Automate-ML-with-Data-Science-Projects.mlflow"
-os.environ["MLFLOW_TRACKING_USERNAME"] = "rj.workhub"
-os.environ["MLFLOW_TRACKING_PASSWORD"] = "88fff356ea218f9049140f5c41fb57fa3e757224"
+# import os
+# os.environ["MLFLOW_TRACKING_URI"] = "https://dagshub.com/rj.workhub/End-to-End-MLOps-Bootcamp-Build-Deploy-and-Automate-ML-with-Data-Science-Projects.mlflow"
+# os.environ["MLFLOW_TRACKING_USERNAME"] = "rj.workhub"
+# os.environ["MLFLOW_TRACKING_PASSWORD"] = "88fff356ea218f9049140f5c41fb57fa3e757224"
 
 
 class ModelEvaluation:
