@@ -685,3 +685,43 @@ Traceback (most recent call last):
   File "/workspaces/End-to-End-MLOps-Bootcamp-Build-Deploy-and-Automate-ML-with-Data-Science-Projects/myFirstNewProject/.venv/lib/python3.11/site-packages/mlflow/utils/rest_utils.py", line 321, in verify_rest_response
     raise MlflowException(
 mlflow.exceptions.MlflowException: API request to endpoint /api/2.0/mlflow/registered-models/create failed with error code 403 != 200. Response body: ''
+2026-01-09 10:27:24 - INFO - main - >>>>> Stage : Data Ingestion Stage started execution <<<<<
+2026-01-09 10:27:24 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-09 10:27:24 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-09 10:27:24 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-09 10:27:24 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-09 10:27:24 - INFO - common_utils - Created directory Successfuly at: artifacts/data_ingestion 🥳
+2026-01-09 10:27:24 - INFO - data_ingestion - The file already exists in the local repository
+2026-01-09 10:27:24 - INFO - main - >>>> Stage: Data Ingestion Stage completed <<<<
+2026-01-09 10:27:24 - INFO - main - >>>>> Stage : Data Validation Stage started execution <<<<<
+2026-01-09 10:27:24 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-09 10:27:24 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-09 10:27:24 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-09 10:27:24 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-09 10:27:24 - INFO - common_utils - Created directory Successfuly at: artifacts/data_validation 🥳
+2026-01-09 10:27:24 - INFO - main - >>>> Stage: Data Validation Stage completed <<<<
+2026-01-09 10:27:24 - INFO - main - >>>>> Stage : Data Transformation Stage started execution <<<<<
+2026-01-09 10:27:24 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-09 10:27:24 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-09 10:27:24 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-09 10:27:24 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-09 10:27:24 - INFO - common_utils - Created directory Successfuly at: artifacts/data_transformation 🥳
+2026-01-09 10:27:24 - INFO - data_transformation - Train test split completed. 
+2026-01-09 10:27:24 - INFO - data_transformation - Train data shape : (1199, 12)
+2026-01-09 10:27:24 - INFO - data_transformation - Test data shape : (400, 12)
+2026-01-09 10:27:24 - INFO - main - >>>> Stage: Data Transformation Stage completed <<<<
+2026-01-09 10:27:24 - INFO - main - >>>>> Stage : Model Training Stage started execution <<<<<
+2026-01-09 10:27:24 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-09 10:27:24 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-09 10:27:24 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-09 10:27:24 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-09 10:27:24 - INFO - common_utils - Created directory Successfuly at: artifacts/model_trainer 🥳
+2026-01-09 10:27:24 - INFO - main - >>>> Stage: Model Training Stage completed <<<<
+2026-01-09 10:27:24 - INFO - main - >>>>> Stage : Model Evaluation Stage started execution <<<<<
+2026-01-09 10:27:24 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-09 10:27:24 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-09 10:27:24 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-09 10:27:24 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-09 10:27:24 - INFO - common_utils - Created directory Successfuly at: artifacts/model_evaluation 🥳
+2026-01-09 10:27:25 - INFO - common_utils - Json file saved at: artifacts/model_evaluation/metric.json 🥳
+2026-01-09 10:27:41 - INFO - main - >>>> Stage: Model Evaluation Stage completed <<<<
