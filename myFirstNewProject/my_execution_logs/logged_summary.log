@@ -725,3 +725,402 @@ mlflow.exceptions.MlflowException: API request to endpoint /api/2.0/mlflow/regis
 2026-01-09 10:27:24 - INFO - common_utils - Created directory Successfuly at: artifacts/model_evaluation 🥳
 2026-01-09 10:27:25 - INFO - common_utils - Json file saved at: artifacts/model_evaluation/metric.json 🥳
 2026-01-09 10:27:41 - INFO - main - >>>> Stage: Model Evaluation Stage completed <<<<
+2026-01-10 14:36:18 - INFO - main - >>>>> Stage : Data Ingestion Stage started execution <<<<<
+2026-01-10 14:36:18 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:36:18 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:36:18 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:36:18 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:36:18 - INFO - common_utils - Created directory Successfuly at: artifacts/data_ingestion 🥳
+2026-01-10 14:36:18 - INFO - data_ingestion - The file already exists in the local repository
+2026-01-10 14:36:18 - INFO - main - >>>> Stage: Data Ingestion Stage completed <<<<
+2026-01-10 14:36:18 - INFO - main - >>>>> Stage : Data Validation Stage started execution <<<<<
+2026-01-10 14:36:18 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:36:18 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:36:18 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:36:18 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:36:18 - INFO - common_utils - Created directory Successfuly at: artifacts/data_validation 🥳
+2026-01-10 14:36:18 - INFO - main - >>>> Stage: Data Validation Stage completed <<<<
+2026-01-10 14:36:18 - INFO - main - >>>>> Stage : Data Transformation Stage started execution <<<<<
+2026-01-10 14:36:18 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:36:18 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:36:18 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:36:18 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:36:18 - INFO - common_utils - Created directory Successfuly at: artifacts/data_transformation 🥳
+2026-01-10 14:36:18 - INFO - data_transformation - Train test split completed. 
+2026-01-10 14:36:18 - INFO - data_transformation - Train data shape : (1199, 12)
+2026-01-10 14:36:18 - INFO - data_transformation - Test data shape : (400, 12)
+2026-01-10 14:36:18 - INFO - main - >>>> Stage: Data Transformation Stage completed <<<<
+2026-01-10 14:36:18 - INFO - main - >>>>> Stage : Model Training Stage started execution <<<<<
+2026-01-10 14:36:18 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:36:18 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:36:18 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:36:18 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:36:18 - INFO - common_utils - Created directory Successfuly at: artifacts/model_trainer 🥳
+2026-01-10 14:36:18 - INFO - main - >>>> Stage: Model Training Stage completed <<<<
+2026-01-10 14:36:18 - INFO - main - >>>>> Stage : Model Evaluation Stage started execution <<<<<
+2026-01-10 14:36:18 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:36:18 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:36:18 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:36:18 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:36:18 - INFO - common_utils - Created directory Successfuly at: artifacts/model_evaluation 🥳
+2026-01-10 14:36:21 - INFO - common_utils - Json file saved at: artifacts/model_evaluation/metric.json 🥳
+2026-01-10 14:36:26 - ERROR - main - API request to endpoint /api/2.0/mlflow/registered-models/create failed with error code 403 != 200. Response body: ''
+Traceback (most recent call last):
+  File "/workspaces/End-to-End-MLOps-Bootcamp-Build-Deploy-and-Automate-ML-with-Data-Science-Projects/myFirstNewProject/main.py", line 56, in <module>
+    model_evaluation.initiate_model_evaluation()
+  File "/workspaces/End-to-End-MLOps-Bootcamp-Build-Deploy-and-Automate-ML-with-Data-Science-Projects/myFirstNewProject/src/my_first_end_to_end_project/pipeline/model_evaluation_pipeline.py", line 16, in initiate_model_evaluation
+    model_evaluation.log_into_mlflow()
+  File "/workspaces/End-to-End-MLOps-Bootcamp-Build-Deploy-and-Automate-ML-with-Data-Science-Projects/myFirstNewProject/src/my_first_end_to_end_project/components/model_evaluation.py", line 58, in log_into_mlflow
+    mlflow.sklearn.log_model(model, "model", registered_model_name="ElasticnetModel")
+  File "/workspaces/End-to-End-MLOps-Bootcamp-Build-Deploy-and-Automate-ML-with-Data-Science-Projects/myFirstNewProject/.venv/lib/python3.11/site-packages/mlflow/sklearn/__init__.py", line 426, in log_model
+    return Model.log(
+           ^^^^^^^^^^
+  File "/workspaces/End-to-End-MLOps-Bootcamp-Build-Deploy-and-Automate-ML-with-Data-Science-Projects/myFirstNewProject/.venv/lib/python3.11/site-packages/mlflow/models/model.py", line 1357, in log
+    registered_model = mlflow.tracking._model_registry.fluent._register_model(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/End-to-End-MLOps-Bootcamp-Build-Deploy-and-Automate-ML-with-Data-Science-Projects/myFirstNewProject/.venv/lib/python3.11/site-packages/mlflow/tracking/_model_registry/fluent.py", line 167, in _register_model
+    raise e
+  File "/workspaces/End-to-End-MLOps-Bootcamp-Build-Deploy-and-Automate-ML-with-Data-Science-Projects/myFirstNewProject/.venv/lib/python3.11/site-packages/mlflow/tracking/_model_registry/fluent.py", line 156, in _register_model
+    create_model_response = client.create_registered_model(name)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/End-to-End-MLOps-Bootcamp-Build-Deploy-and-Automate-ML-with-Data-Science-Projects/myFirstNewProject/.venv/lib/python3.11/site-packages/mlflow/tracking/client.py", line 3842, in create_registered_model
+    return self._get_registry_client().create_registered_model(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/End-to-End-MLOps-Bootcamp-Build-Deploy-and-Automate-ML-with-Data-Science-Projects/myFirstNewProject/.venv/lib/python3.11/site-packages/mlflow/telemetry/track.py", line 30, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/End-to-End-MLOps-Bootcamp-Build-Deploy-and-Automate-ML-with-Data-Science-Projects/myFirstNewProject/.venv/lib/python3.11/site-packages/mlflow/tracking/_model_registry/client.py", line 96, in create_registered_model
+    return self.store.create_registered_model(name, tags, description, deployment_job_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/End-to-End-MLOps-Bootcamp-Build-Deploy-and-Automate-ML-with-Data-Science-Projects/myFirstNewProject/.venv/lib/python3.11/site-packages/mlflow/store/model_registry/rest_store.py", line 110, in create_registered_model
+    response_proto = self._call_endpoint(CreateRegisteredModel, req_body)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/End-to-End-MLOps-Bootcamp-Build-Deploy-and-Automate-ML-with-Data-Science-Projects/myFirstNewProject/.venv/lib/python3.11/site-packages/mlflow/store/model_registry/base_rest_store.py", line 42, in _call_endpoint
+    return call_endpoint(
+           ^^^^^^^^^^^^^^
+  File "/workspaces/End-to-End-MLOps-Bootcamp-Build-Deploy-and-Automate-ML-with-Data-Science-Projects/myFirstNewProject/.venv/lib/python3.11/site-packages/mlflow/utils/rest_utils.py", line 596, in call_endpoint
+    response = verify_rest_response(response, endpoint)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/End-to-End-MLOps-Bootcamp-Build-Deploy-and-Automate-ML-with-Data-Science-Projects/myFirstNewProject/.venv/lib/python3.11/site-packages/mlflow/utils/rest_utils.py", line 321, in verify_rest_response
+    raise MlflowException(
+mlflow.exceptions.MlflowException: API request to endpoint /api/2.0/mlflow/registered-models/create failed with error code 403 != 200. Response body: ''
+2026-01-10 14:41:02 - INFO - main - >>>>> Stage : Data Ingestion Stage started execution <<<<<
+2026-01-10 14:41:02 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:41:02 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:41:02 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:41:02 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:41:02 - INFO - common_utils - Created directory Successfuly at: artifacts/data_ingestion 🥳
+2026-01-10 14:41:02 - INFO - data_ingestion - The file already exists in the local repository
+2026-01-10 14:41:02 - INFO - main - >>>> Stage: Data Ingestion Stage completed <<<<
+2026-01-10 14:41:02 - INFO - main - >>>>> Stage : Data Validation Stage started execution <<<<<
+2026-01-10 14:41:02 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:41:02 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:41:02 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:41:02 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:41:02 - INFO - common_utils - Created directory Successfuly at: artifacts/data_validation 🥳
+2026-01-10 14:41:02 - INFO - main - >>>> Stage: Data Validation Stage completed <<<<
+2026-01-10 14:41:02 - INFO - main - >>>>> Stage : Data Transformation Stage started execution <<<<<
+2026-01-10 14:41:02 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:41:02 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:41:02 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:41:02 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:41:02 - INFO - common_utils - Created directory Successfuly at: artifacts/data_transformation 🥳
+2026-01-10 14:41:02 - INFO - data_transformation - Train test split completed. 
+2026-01-10 14:41:02 - INFO - data_transformation - Train data shape : (1199, 12)
+2026-01-10 14:41:02 - INFO - data_transformation - Test data shape : (400, 12)
+2026-01-10 14:41:02 - INFO - main - >>>> Stage: Data Transformation Stage completed <<<<
+2026-01-10 14:41:02 - INFO - main - >>>>> Stage : Model Training Stage started execution <<<<<
+2026-01-10 14:41:02 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:41:02 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:41:02 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:41:02 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:41:02 - INFO - common_utils - Created directory Successfuly at: artifacts/model_trainer 🥳
+2026-01-10 14:41:02 - INFO - main - >>>> Stage: Model Training Stage completed <<<<
+2026-01-10 14:41:02 - INFO - main - >>>>> Stage : Model Evaluation Stage started execution <<<<<
+2026-01-10 14:41:02 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:41:02 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:41:02 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:41:02 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:41:02 - INFO - common_utils - Created directory Successfuly at: artifacts/model_evaluation 🥳
+2026-01-10 14:41:03 - INFO - common_utils - Json file saved at: artifacts/model_evaluation/metric.json 🥳
+2026-01-10 14:41:19 - INFO - main - >>>> Stage: Model Evaluation Stage completed <<<<
+2026-01-10 14:43:32 - INFO - main - >>>>> Stage : Data Ingestion Stage started execution <<<<<
+2026-01-10 14:43:32 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:43:32 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:43:32 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:43:32 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:43:32 - INFO - common_utils - Created directory Successfuly at: artifacts/data_ingestion 🥳
+2026-01-10 14:43:32 - INFO - data_ingestion - The file already exists in the local repository
+2026-01-10 14:43:32 - INFO - main - >>>> Stage: Data Ingestion Stage completed <<<<
+2026-01-10 14:43:32 - INFO - main - >>>>> Stage : Data Validation Stage started execution <<<<<
+2026-01-10 14:43:32 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:43:32 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:43:32 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:43:32 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:43:32 - INFO - common_utils - Created directory Successfuly at: artifacts/data_validation 🥳
+2026-01-10 14:43:32 - INFO - main - >>>> Stage: Data Validation Stage completed <<<<
+2026-01-10 14:43:32 - INFO - main - >>>>> Stage : Data Transformation Stage started execution <<<<<
+2026-01-10 14:43:32 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:43:32 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:43:32 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:43:32 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:43:32 - INFO - common_utils - Created directory Successfuly at: artifacts/data_transformation 🥳
+2026-01-10 14:43:32 - INFO - data_transformation - Train test split completed. 
+2026-01-10 14:43:32 - INFO - data_transformation - Train data shape : (1199, 12)
+2026-01-10 14:43:32 - INFO - data_transformation - Test data shape : (400, 12)
+2026-01-10 14:43:32 - INFO - main - >>>> Stage: Data Transformation Stage completed <<<<
+2026-01-10 14:43:32 - INFO - main - >>>>> Stage : Model Training Stage started execution <<<<<
+2026-01-10 14:43:32 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:43:32 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:43:32 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:43:32 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:43:32 - INFO - common_utils - Created directory Successfuly at: artifacts/model_trainer 🥳
+2026-01-10 14:43:32 - INFO - main - >>>> Stage: Model Training Stage completed <<<<
+2026-01-10 14:43:32 - INFO - main - >>>>> Stage : Model Evaluation Stage started execution <<<<<
+2026-01-10 14:43:32 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:43:32 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:43:32 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:43:32 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:43:32 - INFO - common_utils - Created directory Successfuly at: artifacts/model_evaluation 🥳
+2026-01-10 14:43:33 - INFO - common_utils - Json file saved at: artifacts/model_evaluation/metric.json 🥳
+2026-01-10 14:43:49 - INFO - main - >>>> Stage: Model Evaluation Stage completed <<<<
+2026-01-10 14:48:06 - INFO - main - >>>>> Stage : Data Ingestion Stage started execution <<<<<
+2026-01-10 14:48:06 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:48:06 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:48:06 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:48:06 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:48:06 - INFO - common_utils - Created directory Successfuly at: artifacts/data_ingestion 🥳
+2026-01-10 14:48:06 - INFO - data_ingestion - The file already exists in the local repository
+2026-01-10 14:48:06 - INFO - main - >>>> Stage: Data Ingestion Stage completed <<<<
+2026-01-10 14:48:06 - INFO - main - >>>>> Stage : Data Validation Stage started execution <<<<<
+2026-01-10 14:48:06 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:48:06 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:48:06 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:48:06 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:48:06 - INFO - common_utils - Created directory Successfuly at: artifacts/data_validation 🥳
+2026-01-10 14:48:06 - INFO - main - >>>> Stage: Data Validation Stage completed <<<<
+2026-01-10 14:48:06 - INFO - main - >>>>> Stage : Data Transformation Stage started execution <<<<<
+2026-01-10 14:48:06 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:48:06 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:48:06 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:48:06 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:48:06 - INFO - common_utils - Created directory Successfuly at: artifacts/data_transformation 🥳
+2026-01-10 14:48:06 - INFO - data_transformation - Train test split completed. 
+2026-01-10 14:48:06 - INFO - data_transformation - Train data shape : (1199, 12)
+2026-01-10 14:48:06 - INFO - data_transformation - Test data shape : (400, 12)
+2026-01-10 14:48:06 - INFO - main - >>>> Stage: Data Transformation Stage completed <<<<
+2026-01-10 14:48:06 - INFO - main - >>>>> Stage : Model Training Stage started execution <<<<<
+2026-01-10 14:48:06 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:48:06 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:48:06 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:48:06 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:48:06 - INFO - common_utils - Created directory Successfuly at: artifacts/model_trainer 🥳
+2026-01-10 14:48:06 - INFO - main - >>>> Stage: Model Training Stage completed <<<<
+2026-01-10 14:48:06 - INFO - main - >>>>> Stage : Model Evaluation Stage started execution <<<<<
+2026-01-10 14:48:06 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:48:06 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:48:06 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:48:06 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:48:06 - INFO - common_utils - Created directory Successfuly at: artifacts/model_evaluation 🥳
+2026-01-10 14:48:07 - INFO - common_utils - Json file saved at: artifacts/model_evaluation/metric.json 🥳
+2026-01-10 14:48:23 - INFO - main - >>>> Stage: Model Evaluation Stage completed <<<<
+2026-01-10 14:50:27 - INFO - main - >>>>> Stage : Data Ingestion Stage started execution <<<<<
+2026-01-10 14:50:27 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:50:27 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:50:27 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:50:27 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:50:27 - INFO - common_utils - Created directory Successfuly at: artifacts/data_ingestion 🥳
+2026-01-10 14:50:27 - INFO - data_ingestion - The file already exists in the local repository
+2026-01-10 14:50:27 - INFO - main - >>>> Stage: Data Ingestion Stage completed <<<<
+2026-01-10 14:50:27 - INFO - main - >>>>> Stage : Data Validation Stage started execution <<<<<
+2026-01-10 14:50:27 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:50:27 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:50:27 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:50:27 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:50:27 - INFO - common_utils - Created directory Successfuly at: artifacts/data_validation 🥳
+2026-01-10 14:50:27 - INFO - main - >>>> Stage: Data Validation Stage completed <<<<
+2026-01-10 14:50:27 - INFO - main - >>>>> Stage : Data Transformation Stage started execution <<<<<
+2026-01-10 14:50:27 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:50:27 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:50:27 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:50:27 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:50:27 - INFO - common_utils - Created directory Successfuly at: artifacts/data_transformation 🥳
+2026-01-10 14:50:27 - INFO - data_transformation - Train test split completed. 
+2026-01-10 14:50:27 - INFO - data_transformation - Train data shape : (1199, 12)
+2026-01-10 14:50:27 - INFO - data_transformation - Test data shape : (400, 12)
+2026-01-10 14:50:27 - INFO - main - >>>> Stage: Data Transformation Stage completed <<<<
+2026-01-10 14:50:27 - INFO - main - >>>>> Stage : Model Training Stage started execution <<<<<
+2026-01-10 14:50:27 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:50:27 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:50:27 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:50:27 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:50:27 - INFO - common_utils - Created directory Successfuly at: artifacts/model_trainer 🥳
+2026-01-10 14:50:27 - INFO - main - >>>> Stage: Model Training Stage completed <<<<
+2026-01-10 14:50:27 - INFO - main - >>>>> Stage : Model Evaluation Stage started execution <<<<<
+2026-01-10 14:50:27 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:50:27 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:50:27 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:50:27 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:50:27 - INFO - common_utils - Created directory Successfuly at: artifacts/model_evaluation 🥳
+2026-01-10 14:50:28 - INFO - common_utils - Json file saved at: artifacts/model_evaluation/metric.json 🥳
+2026-01-10 14:50:44 - INFO - main - >>>> Stage: Model Evaluation Stage completed <<<<
+2026-01-10 14:53:09 - INFO - main - >>>>> Stage : Data Ingestion Stage started execution <<<<<
+2026-01-10 14:53:09 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:53:09 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:53:09 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:53:09 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:53:09 - INFO - common_utils - Created directory Successfuly at: artifacts/data_ingestion 🥳
+2026-01-10 14:53:09 - INFO - data_ingestion - The file already exists in the local repository
+2026-01-10 14:53:09 - INFO - main - >>>> Stage: Data Ingestion Stage completed <<<<
+2026-01-10 14:53:09 - INFO - main - >>>>> Stage : Data Validation Stage started execution <<<<<
+2026-01-10 14:53:09 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:53:09 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:53:09 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:53:09 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:53:09 - INFO - common_utils - Created directory Successfuly at: artifacts/data_validation 🥳
+2026-01-10 14:53:09 - INFO - main - >>>> Stage: Data Validation Stage completed <<<<
+2026-01-10 14:53:09 - INFO - main - >>>>> Stage : Data Transformation Stage started execution <<<<<
+2026-01-10 14:53:09 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:53:09 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:53:09 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:53:09 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:53:09 - INFO - common_utils - Created directory Successfuly at: artifacts/data_transformation 🥳
+2026-01-10 14:53:09 - INFO - data_transformation - Train test split completed. 
+2026-01-10 14:53:09 - INFO - data_transformation - Train data shape : (1199, 12)
+2026-01-10 14:53:09 - INFO - data_transformation - Test data shape : (400, 12)
+2026-01-10 14:53:09 - INFO - main - >>>> Stage: Data Transformation Stage completed <<<<
+2026-01-10 14:53:09 - INFO - main - >>>>> Stage : Model Training Stage started execution <<<<<
+2026-01-10 14:53:09 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:53:09 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:53:09 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:53:09 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:53:09 - INFO - common_utils - Created directory Successfuly at: artifacts/model_trainer 🥳
+2026-01-10 14:53:09 - INFO - main - >>>> Stage: Model Training Stage completed <<<<
+2026-01-10 14:53:09 - INFO - main - >>>>> Stage : Model Evaluation Stage started execution <<<<<
+2026-01-10 14:53:09 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:53:09 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:53:09 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:53:09 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:53:09 - INFO - common_utils - Created directory Successfuly at: artifacts/model_evaluation 🥳
+2026-01-10 14:53:10 - INFO - common_utils - Json file saved at: artifacts/model_evaluation/metric.json 🥳
+2026-01-10 14:53:26 - INFO - main - >>>> Stage: Model Evaluation Stage completed <<<<
+2026-01-10 14:53:28 - INFO - main - >>>>> Stage : Data Ingestion Stage started execution <<<<<
+2026-01-10 14:53:28 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:53:28 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:53:28 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:53:28 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:53:28 - INFO - common_utils - Created directory Successfuly at: artifacts/data_ingestion 🥳
+2026-01-10 14:53:28 - INFO - data_ingestion - The file already exists in the local repository
+2026-01-10 14:53:28 - INFO - main - >>>> Stage: Data Ingestion Stage completed <<<<
+2026-01-10 14:53:28 - INFO - main - >>>>> Stage : Data Validation Stage started execution <<<<<
+2026-01-10 14:53:28 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:53:28 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:53:28 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:53:28 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:53:28 - INFO - common_utils - Created directory Successfuly at: artifacts/data_validation 🥳
+2026-01-10 14:53:28 - INFO - main - >>>> Stage: Data Validation Stage completed <<<<
+2026-01-10 14:53:28 - INFO - main - >>>>> Stage : Data Transformation Stage started execution <<<<<
+2026-01-10 14:53:28 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:53:28 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:53:28 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:53:28 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:53:28 - INFO - common_utils - Created directory Successfuly at: artifacts/data_transformation 🥳
+2026-01-10 14:53:28 - INFO - data_transformation - Train test split completed. 
+2026-01-10 14:53:28 - INFO - data_transformation - Train data shape : (1199, 12)
+2026-01-10 14:53:28 - INFO - data_transformation - Test data shape : (400, 12)
+2026-01-10 14:53:28 - INFO - main - >>>> Stage: Data Transformation Stage completed <<<<
+2026-01-10 14:53:28 - INFO - main - >>>>> Stage : Model Training Stage started execution <<<<<
+2026-01-10 14:53:28 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:53:28 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:53:28 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:53:28 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:53:28 - INFO - common_utils - Created directory Successfuly at: artifacts/model_trainer 🥳
+2026-01-10 14:53:28 - INFO - main - >>>> Stage: Model Training Stage completed <<<<
+2026-01-10 14:53:28 - INFO - main - >>>>> Stage : Model Evaluation Stage started execution <<<<<
+2026-01-10 14:53:28 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:53:28 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:53:28 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:53:28 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:53:28 - INFO - common_utils - Created directory Successfuly at: artifacts/model_evaluation 🥳
+2026-01-10 14:53:29 - INFO - common_utils - Json file saved at: artifacts/model_evaluation/metric.json 🥳
+2026-01-10 14:53:53 - INFO - main - >>>> Stage: Model Evaluation Stage completed <<<<
+2026-01-10 14:58:30 - INFO - main - >>>>> Stage : Data Ingestion Stage started execution <<<<<
+2026-01-10 14:58:30 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:58:30 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:58:30 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:58:30 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:58:30 - INFO - common_utils - Created directory Successfuly at: artifacts/data_ingestion 🥳
+2026-01-10 14:58:30 - INFO - data_ingestion - The file already exists in the local repository
+2026-01-10 14:58:30 - INFO - main - >>>> Stage: Data Ingestion Stage completed <<<<
+2026-01-10 14:58:30 - INFO - main - >>>>> Stage : Data Validation Stage started execution <<<<<
+2026-01-10 14:58:30 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:58:30 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:58:30 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:58:30 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:58:30 - INFO - common_utils - Created directory Successfuly at: artifacts/data_validation 🥳
+2026-01-10 14:58:30 - INFO - main - >>>> Stage: Data Validation Stage completed <<<<
+2026-01-10 14:58:30 - INFO - main - >>>>> Stage : Data Transformation Stage started execution <<<<<
+2026-01-10 14:58:30 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:58:30 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:58:30 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:58:30 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:58:30 - INFO - common_utils - Created directory Successfuly at: artifacts/data_transformation 🥳
+2026-01-10 14:58:30 - INFO - data_transformation - Train test split completed. 
+2026-01-10 14:58:30 - INFO - data_transformation - Train data shape : (1199, 12)
+2026-01-10 14:58:30 - INFO - data_transformation - Test data shape : (400, 12)
+2026-01-10 14:58:30 - INFO - main - >>>> Stage: Data Transformation Stage completed <<<<
+2026-01-10 14:58:30 - INFO - main - >>>>> Stage : Model Training Stage started execution <<<<<
+2026-01-10 14:58:30 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:58:30 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:58:30 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:58:30 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:58:30 - INFO - common_utils - Created directory Successfuly at: artifacts/model_trainer 🥳
+2026-01-10 14:58:30 - INFO - main - >>>> Stage: Model Training Stage completed <<<<
+2026-01-10 14:58:30 - INFO - main - >>>>> Stage : Model Evaluation Stage started execution <<<<<
+2026-01-10 14:58:30 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:58:30 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:58:30 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:58:30 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:58:30 - INFO - common_utils - Created directory Successfuly at: artifacts/model_evaluation 🥳
+2026-01-10 14:58:30 - INFO - common_utils - Json file saved at: artifacts/model_evaluation/metric.json 🥳
+2026-01-10 14:58:46 - INFO - main - >>>> Stage: Model Evaluation Stage completed <<<<
+2026-01-10 14:58:48 - INFO - main - >>>>> Stage : Data Ingestion Stage started execution <<<<<
+2026-01-10 14:58:48 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:58:48 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:58:48 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:58:48 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:58:48 - INFO - common_utils - Created directory Successfuly at: artifacts/data_ingestion 🥳
+2026-01-10 14:58:48 - INFO - data_ingestion - The file already exists in the local repository
+2026-01-10 14:58:48 - INFO - main - >>>> Stage: Data Ingestion Stage completed <<<<
+2026-01-10 14:58:48 - INFO - main - >>>>> Stage : Data Validation Stage started execution <<<<<
+2026-01-10 14:58:48 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:58:48 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:58:48 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:58:48 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:58:48 - INFO - common_utils - Created directory Successfuly at: artifacts/data_validation 🥳
+2026-01-10 14:58:48 - INFO - main - >>>> Stage: Data Validation Stage completed <<<<
+2026-01-10 14:58:48 - INFO - main - >>>>> Stage : Data Transformation Stage started execution <<<<<
+2026-01-10 14:58:48 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:58:48 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:58:48 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:58:48 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:58:48 - INFO - common_utils - Created directory Successfuly at: artifacts/data_transformation 🥳
+2026-01-10 14:58:48 - INFO - data_transformation - Train test split completed. 
+2026-01-10 14:58:48 - INFO - data_transformation - Train data shape : (1199, 12)
+2026-01-10 14:58:48 - INFO - data_transformation - Test data shape : (400, 12)
+2026-01-10 14:58:48 - INFO - main - >>>> Stage: Data Transformation Stage completed <<<<
+2026-01-10 14:58:48 - INFO - main - >>>>> Stage : Model Training Stage started execution <<<<<
+2026-01-10 14:58:48 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:58:48 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:58:48 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:58:48 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:58:48 - INFO - common_utils - Created directory Successfuly at: artifacts/model_trainer 🥳
+2026-01-10 14:58:48 - INFO - main - >>>> Stage: Model Training Stage completed <<<<
+2026-01-10 14:58:48 - INFO - main - >>>>> Stage : Model Evaluation Stage started execution <<<<<
+2026-01-10 14:58:48 - INFO - common_utils - yaml file: config/config.yaml is loaded successfully 🥳
+2026-01-10 14:58:48 - INFO - common_utils - yaml file: params.yaml is loaded successfully 🥳
+2026-01-10 14:58:48 - INFO - common_utils - yaml file: schema.yaml is loaded successfully 🥳
+2026-01-10 14:58:48 - INFO - common_utils - Created directory Successfuly at: artifacts 🥳
+2026-01-10 14:58:48 - INFO - common_utils - Created directory Successfuly at: artifacts/model_evaluation 🥳
+2026-01-10 14:58:49 - INFO - common_utils - Json file saved at: artifacts/model_evaluation/metric.json 🥳
+2026-01-10 14:59:13 - INFO - main - >>>> Stage: Model Evaluation Stage completed <<<<
